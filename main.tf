@@ -1,6 +1,7 @@
 resource "azurerm_resource_group" "rg" {
   name     = "${var.team_name}-rg"
   location = var.location
+
   tags = {
     Project     = "CloudProject2"
     Environment = "Production"
@@ -13,7 +14,10 @@ resource "azurerm_virtual_network" "vnet" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   address_space       = ["10.0.0.0/16"]
-  tags = { Project = "CloudProject2" }
+
+  tags = {
+    Project = "CloudProject2"
+  }
 }
 
 resource "azurerm_subnet" "subnet" {
@@ -29,7 +33,10 @@ resource "azurerm_public_ip" "vm_public_ip" {
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "Static"
   sku                 = "Standard"
-  tags = { Project = "CloudProject2" }
+
+  tags = {
+    Project = "CloudProject2"
+  }
 }
 
 resource "azurerm_network_security_group" "nsg" {
@@ -60,7 +67,10 @@ resource "azurerm_network_security_group" "nsg" {
     source_address_prefixes    = ["0.0.0.0/0"]
     destination_address_prefix = "*"
   }
-  tags = { Project = "CloudProject2" }
+
+  tags = {
+    Project = "CloudProject2"
+  }
 }
 
 resource "azurerm_network_interface" "nic" {
@@ -74,7 +84,10 @@ resource "azurerm_network_interface" "nic" {
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.vm_public_ip.id
   }
-  tags = { Project = "CloudProject2" }
+
+  tags = {
+    Project = "CloudProject2"
+  }
 }
 
 resource "azurerm_linux_virtual_machine" "vm" {
