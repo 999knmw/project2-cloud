@@ -55,6 +55,18 @@ flowchart TD
 
 ## 4. Docker Image Build and Push Instructions
 
+To containerize the application, a Docker image was built using the provided Dockerfile. The image was created locally with Docker and tagged with the appropriate repository name.
+
+After verifying that the image was built successfully, it was pushed to Docker Hub to make it available for deployment. The following commands were used:
+
+```bash id="a1k9p3"
+docker build -t sackora/team-webapp:latest .
+docker push sackora/team-webapp:latest
+```
+
+The uploaded image can then be pulled from Docker Hub and used by deployment services or virtual machines to run the application in a consistent environment.
+
+
 [SARA WILL ADD DOCKER INSTRUCTIONS HERE]
 
 ## 5. Terraform Setup Instructions
