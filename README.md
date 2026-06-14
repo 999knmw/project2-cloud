@@ -1,11 +1,12 @@
 # Project 2 Cloud - Infrastructure Deployment
-| Sara Beleid Elhoti | Application & Container Specialist | 4939 |
-| Fatima Alzahraa Mohammed | Infrastructure Architect | 4999 |
-| Tasneem Khaled Aldernawi | DevOps & Pipeline Engineer | 4890 |
+
+* **Sara Beleid Elhoti**: 4939
+* **Fatima Alzahraa Mohammed**: 4999
+* **Tasneem Khaled Aldernawi**: 4890
 
 ## 2. Project Title and Description
-Project Title: Cloud Infrastructure Deployment with Terraform, Docker, and GitHub Actions
-Project Description: This project automates the deployment of a containerized web application to Microsoft Azure using Infrastructure as Code (IaC). The system provisions a complete Azure environment including a Virtual Network, Subnet, Public IP, Network Security Group, and a Linux Virtual Machine. A Docker container running an Nginx web server is automatically deployed and configured to restart always. The entire process is automated using Terraform and GitHub Actions CI/CD pipeline.
+* **Project Title:** Cloud Infrastructure Deployment with Terraform, Docker, and GitHub Actions*
+* **Project Description:** This project automates the deployment of a containerized web application to Microsoft Azure using Infrastructure as Code (IaC). The system provisions a complete Azure environment including a Virtual Network, Subnet, Public IP, Network Security Group, and a Linux Virtual Machine. A Docker container running an Nginx web server is automatically deployed and configured to restart always. The entire process is automated using Terraform and GitHub Actions CI/CD pipeline.
 
 ## 3. Architecture Diagram
 ```mermaid
