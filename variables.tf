@@ -7,7 +7,7 @@ variable "location" {
 variable "team_name" {
   description = "Team name to identify resources (Fatima, Tasneem, Sara)"
   type        = string
-  default     = "FatimaTasneemSara"
+  default     = "FatimaTasneemSaraV2"
 }
 
 variable "vm_size" {
