@@ -136,3 +136,7 @@ resource "azurerm_virtual_machine_extension" "docker_setup" {
 
   depends_on = [azurerm_linux_virtual_machine.vm]
 }
+resource "azurerm_network_interface_security_group_association" "associate_nsg" {
+  network_interface_id      = azurerm_network_interface.nic.id
+  network_security_group_id = azurerm_network_security_group.nsg.id
+}
