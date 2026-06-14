@@ -1,7 +1,7 @@
 variable "location" {
   description = "Azure region where all resources will be deployed"
   type        = string
-  default     = "East US"
+  default     = "Sweden Central"
 }
 
 variable "team_name" {
@@ -13,11 +13,11 @@ variable "team_name" {
 variable "vm_size" {
   description = "Size of the VM (Standard_B1s is free tier eligible)"
   type        = string
-  default     = "Standard_B1s"
+  default     = "Standard_B2s_v2"
 }
 
 variable "docker_image" {
-  description = "Docker Hub image name from Tasneem's container"
+  description = "Docker Hub image name from Sara's container"
   type        = string
-  default     = "nginx:latest"
+  default     = "sackora/team-webapp:v1"
 }
