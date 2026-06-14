@@ -1,5 +1,3 @@
-# main.tf - Complete Infrastructure
-
 resource "azurerm_resource_group" "rg" {
   name     = "${var.team_name}-rg"
   location = var.location
