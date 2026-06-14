@@ -1,0 +1,64 @@
+# Project 2 Cloud - Infrastructure Deployment
+| Sara Beleid Elhoti | Application & Container Specialist | 4939 |
+| Fatima Alzahraa Mohammed | Infrastructure Architect | 4999 |
+| Tasneem Khaled Aldernawi | DevOps & Pipeline Engineer | 4890 |
+
+## 2. Project Title and Description
+Project Title: Cloud Infrastructure Deployment with Terraform, Docker, and GitHub Actions
+Project Description: This project automates the deployment of a containerized web application to Microsoft Azure using Infrastructure as Code (IaC). The system provisions a complete Azure environment including a Virtual Network, Subnet, Public IP, Network Security Group, and a Linux Virtual Machine. A Docker container running an Nginx web server is automatically deployed and configured to restart always. The entire process is automated using Terraform and GitHub Actions CI/CD pipeline.
+
+## 3. Architecture Diagram
+
+
+## 4. Docker Image Build and Push Instructions
+
+[SARA WILL ADD DOCKER INSTRUCTIONS HERE]
+
+## 5. Terraform Setup Instructions
+
+### Prerequisites
+- Azure subscription
+- Terraform installed locally
+- Azure CLI installed
+
+### Terraform Files Created
+| `providers.tf` | Configures Azure provider and backend |
+| `variables.tf` | Input variables (location, team_name, vm_size, docker_image, ssh_public_key) |
+| `outputs.tf` | Output values (resource_group_name, public_ip_address, virtual_machine_id) |
+| `main.tf` | Main infrastructure resources |
+
+### Resources Provisioned
+
+1. **Resource Group** - `FatimaTasneemSara-rg`
+2. **Virtual Network** - `FatimaTasneemSara-vnet` (10.0.0.0/16)
+3. **Subnet** - `internal-subnet` (10.0.1.0/24)
+4. **Public IP** - Static IP for VM access
+5. **Network Security Group** - Allows SSH (port 22) and HTTP (port 80)
+6. **Network Interface** - Connects VM to VNet
+7. **Linux VM** - Ubuntu 22.04 LTS (Standard_B2s_v2)
+8. **Custom Script Extension** - Installs Docker and runs the container with `--restart always`
+
+### Variables
+| `location` | Azure region | Sweden Central |
+| `team_name` | Team identifier | FatimaTasneemSara |
+| `vm_size` | VM size | Standard_B2s_v2 |
+| `docker_image` | Docker Hub image | sackora/team-webapp:v1 |
+| `ssh_public_key` | SSH public key | (your key here) |
+
+### How to Deploy
+
+```bash
+# Initialize Terraform
+terraform init
+
+# Preview changes
+terraform plan
+
+# Deploy infrastructure
+terraform apply -auto-approve
+
+# Get the public IP
+terraform output public_ip_address
+
+# Destroy everything
+terraform destroy -auto-approve
