@@ -67,7 +67,6 @@ docker push sackora/team-webapp:latest
 The uploaded image can then be pulled from Docker Hub and used by deployment services or virtual machines to run the application in a consistent environment.
 
 
-[SARA WILL ADD DOCKER INSTRUCTIONS HERE]
 
 ## 5. Terraform Setup Instructions
 
